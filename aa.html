@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP and Location Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>IP and Location Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>สถานที่</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Table rows will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        // ฟังก์ชันเพื่อสร้างตารางแสดงข้อมูล IP และสถานที่
+        function populateTable(data) {
+            const tableBody = document.getElementById("table-body");
+            tableBody.innerHTML = ''; // ล้างข้อมูลเดิมในตาราง
+
+            data.forEach(item => {
+                const row = document.createElement("tr");
+
+                const ipCell = document.createElement("td");
+                ipCell.textContent = item.ip;
+                row.appendChild(ipCell);
+
+                const locationCell = document.createElement("td");
+                locationCell.textContent = item.location;
+                row.appendChild(locationCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        // ข้อมูล IP และสถานที่ที่ได้จากภาพ
+        const ipLocationData = [
+            { ip: "10.50.11.62", location: "คณะสัตวแพทย์" },
+            { ip: "10.50.11.64", location: "คณะสัตวแพทย์" },
+            { ip: "10.50.11.66", location: "คณะสัตวแพทย์" },
+            { ip: "10.40.1.10", location: "แฟลตบุคลากร 1" },
+            { ip: "10.50.11.21", location: "แฟลตบุคลากร 2" },
+            { ip: "10.50.11.23", location: "แฟลตบุคลากร 3" },
+            { ip: "10.50.11.25", location: "แฟลตบุคลากร 4" },
+            { ip: "10.50.11.27", location: "แฟลตบุคลากร 5" },
+            { ip: "10.50.11.29", location: "แฟลตบุคลากร 6" },
+            { ip: "10.50.11.31", location: "แฟลตบุคลากร 7" },
+            { ip: "10.50.11.33", location: "แฟลตบุคลากร 8" },
+            { ip: "10.50.11.35", location: "แฟลตบุคลากร 9 main" },
+            { ip: "10.50.11.37", location: "แฟลตบุคลากร 9 ชั้น 1" },
+            { ip: "10.50.11.39", location: "แฟลตบุคลากร 9 ชั้น 2" },
+            { ip: "10.50.11.41", location: "แฟลตบุคลากร 9 ชั้น 3" },
+            { ip: "10.50.11.43", location: "แฟลตบุคลากร 10 main" },
+            { ip: "10.50.11.45", location: "แฟลตบุคลากร 10 ชั้น 1" },
+            { ip: "10.50.11.47", location: "แฟลตบุคลากร 10 ชั้น 2" },
+            { ip: "10.50.11.49", location: "แฟลตบุคลากร 10 ชั้น 3" },
+            { ip: "10.50.11.51", location: "แฟลตบุคลากร 11 main" },
+            { ip: "10.50.11.53", location: "แฟลตบุคลากร 11 ชั้น 1" },
+            { ip: "10.50.11.55", location: "แฟลตบุคลากร 11 ชั้น 2" },
+            { ip: "10.50.11.57", location: "แฟลตบุคลากร 11 ชั้น 3" },
+            { ip: "10.50.8.100", location: "ศูนย์มหาลัย" },
+            { ip: "10.50.13.1", location: "ศึกษาศาสตร์" },
+            { ip: "10.50.13.3", location: "วิศวะ" },
+            { ip: "10.50.11.12", location: "ห้องสมุด" },
+            { ip: "10.50.11.67", location: "หอพัก 25 ชั้น 1" },
+            { ip: "10.50.11.69", location: "หอพัก 25 ชั้น 2" },
+            { ip: "10.50.11.71", location: "หอพัก 25 ชั้น 3" },
+            { ip: "10.50.11.73", location: "หอพัก 25 ชั้น 4" },
+            { ip: "10.50.11.75", location: "หอพัก 26 ชั้น 1" },
+            { ip: "10.50.11.77", location: "หอพัก 26 ชั้น 2" },
+            { ip: "10.50.11.79", location: "หอพัก 26 ชั้น 3" },
+            { ip: "10.50.11.81", location: "หอพัก 26 ชั้น 4" },
+            { ip: "10.50.11.83", location: "หอพัก 27 ชั้น 1" }
+            // สามารถเพิ่มข้อมูลเพิ่มเติมได้ตามต้องการ
+        ];
+
+        // เรียกใช้ฟังก์ชันเพื่อเติมข้อมูลในตาราง
+        populateTable(ipLocationData);
+    </script>
+
+</body>
+
+</html>
